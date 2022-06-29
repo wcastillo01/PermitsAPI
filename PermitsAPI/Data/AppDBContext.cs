@@ -14,11 +14,5 @@ namespace PermitsAPI.Data
         {
         }
 
-        //public protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Permit>().;
-        //}
-    
-
     }
 }

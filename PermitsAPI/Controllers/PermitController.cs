@@ -27,7 +27,21 @@ namespace PermitsAPI.Controllers
         [HttpGet]
         public IActionResult GetPermits()
         {
-            return Ok(database.Permits.ToList());
+            var permits = ( from p in database.Permits
+                            from pt in database.PermitTypes
+                            where p.PermitTypeId == pt.PermitTypeId
+                            select new
+                            {
+                                PermitId = p.PermitId,
+                                EmpName = p.EmpName,
+                                EmpLastName = p.EmpLastName,
+                                PermitTypeId = pt.PermitTypeId,
+                                PermitDescription = pt.Description,
+                                PermitDate = p.PermitDate
+
+                            }).ToList();
+            return Ok(permits);
+            //return Ok(database.Permits.ToList());
         }
 
         [HttpGet("{id}")]
