@@ -1,0 +1,57 @@
+<div class="container">
+  <h4 class="edit-title">Edit Permit</h4>
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      name="empName"
+      [(ngModel)]="permit.empName"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Name"
+    />
+    <label for="floatingInput" for="empName">Name</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      name="empLastName"
+      [(ngModel)]="permit.empLastName"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Name"
+    />
+    <label for="floatingInput" for="empLastName">Last Name</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      name="permitType"
+      [(ngModel)]="permit.permitType"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Name"
+    />
+    <label for="floatingInput" for="permitType">Permit Type</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input
+      type="text"
+      name="permitDate"
+      [(ngModel)]="permit.permitDate"
+      class="form-control"
+      id="floatingInput"
+      placeholder="Name"
+    />
+    <label for="floatingInput" for="permitDate">Date</label>
+  </div>
+
+  <div *ngIf="showAlert" class="success-alert">
+    <div class="alert alert-dark" role="alert">
+      Your permit has been updated successfully!
+    </div>
+  </div>
+  <button class="btn btn-dark mt-3" (click)="update()">Update</button>
+</div>

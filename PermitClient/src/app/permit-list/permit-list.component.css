@@ -1,0 +1,16 @@
+.card {
+  height: 75%;
+  margin-bottom: 1.5rem;
+}
+
+.permit-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card-body {
+  font-weight: 425;
+}
