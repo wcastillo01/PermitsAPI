@@ -8,7 +8,7 @@
           {{ permit.empName }} {{ permit.empLastName }}
         </h5>
         <p>ID: #{{ permit.permitId }}</p>
-        <p>Permit Type: {{ permit.permitType }}</p>
+        <p>Permit Type: {{ permit.permitDescription }}</p>
         <p>Permit Type ID: #{{ permit.permitTypeId }}</p>
         <p>Date: {{ permit.permitDate.toString().slice(0, 10) }}</p>
         <button class="btn btn-danger" (click)="deletePermit(permit.permitId)">

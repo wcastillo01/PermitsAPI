@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Permit from './models/permits';
+import Permit, { PermitDTO } from './models/permits';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,8 +9,10 @@ import { Observable } from 'rxjs';
 export class PermitsService {
   constructor(private HttpClient: HttpClient) {}
 
-  getPermits(): Observable<Permit[]> {
-    return this.HttpClient.get<Permit[]>('https://localhost:5001/api/Permit');
+  getPermits(): Observable<PermitDTO[]> {
+    return this.HttpClient.get<PermitDTO[]>(
+      'https://localhost:5001/api/Permit'
+    );
   }
 
   getPermitById(id: number): Observable<Permit> {

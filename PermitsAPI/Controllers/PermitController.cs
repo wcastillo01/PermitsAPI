@@ -27,7 +27,7 @@ namespace PermitsAPI.Controllers
         [HttpGet]
         public IActionResult GetPermits()
         {
-            var permits = ( from p in database.Permits
+            var permitsTemp = ( from p in database.Permits
                             from pt in database.PermitTypes
                             where p.PermitTypeId == pt.PermitTypeId
                             select new
@@ -40,6 +40,23 @@ namespace PermitsAPI.Controllers
                                 PermitDate = p.PermitDate
 
                             }).ToList();
+            List<PermitDTO> permits = new List<PermitDTO>();
+
+            foreach(var permit in permitsTemp)
+            {
+                PermitDTO permitDTO = new PermitDTO
+                {
+                    PermitId = permit.PermitId,
+                    EmpName = permit.EmpName,
+                    EmpLastName = permit.EmpLastName,
+                    PermitTypeId = permit.PermitTypeId,
+                    PermitDescription = permit.PermitDescription,
+                    PermitDate = permit.PermitDate
+                };
+
+                permits.Add(permitDTO);
+            }
+
             return Ok(permits);
             //return Ok(database.Permits.ToList());
         }

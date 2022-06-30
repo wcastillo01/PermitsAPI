@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PermitsService } from '../permits.service';
-import Permit from '../models/permits';
+import PermitDTO from '../models/permits';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 export class PermitListComponent implements OnInit {
   constructor(private PermitService: PermitsService) {}
 
-  permits: Permit[] = [];
+  permits: any[] = [];
 
   ngOnInit(): void {
     this.PermitService.getPermits().subscribe((data) => {

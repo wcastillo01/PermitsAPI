@@ -20,7 +20,8 @@ export class AddPermitComponent implements OnInit {
   ngOnInit(): void {}
 
   add(): void {
-    this.permitService.addPermit(this.permit).subscribe(() => {
+    console.log("test")
+      this.permitService.addPermit(this.permit).subscribe(() => {
       this.showAlert = !this.showAlert;
     });
   }

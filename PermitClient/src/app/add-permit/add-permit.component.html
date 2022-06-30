@@ -1,58 +1,34 @@
 <div class="container">
   <h4 class="add-title">Add Permit</h4>
-
+<form #addForm="ngForm" >
   <div class="form-floating mb-3">
-    <input
-      type="text"
-      name="empName"
-      [(ngModel)]="permit.empName"
-      class="form-control"
-      id="floatingInput"
-      placeholder="Name"
-    />
+    <input required type="text" name="empName" [(ngModel)]="permit.empName" class="form-control" id="floatingInput"
+      placeholder="Name" />
     <label for="floatingInput" for="empName">Name</label>
   </div>
 
   <div class="form-floating mb-3">
-    <input
-      type="text"
-      name="empLastName"
-      [(ngModel)]="permit.empLastName"
-      class="form-control"
-      id="floatingInput"
-      placeholder="Name"
-    />
+    <input required type="text" name="empLastName" [(ngModel)]="permit.empLastName" class="form-control"
+      id="floatingInput" placeholder="Name" />
     <label for="floatingInput" for="empLastName">Last Name</label>
   </div>
 
   <div class="form-floating mb-3">
-    <input
-      type="text"
-      name="permitType"
-      [(ngModel)]="permit.permitType"
-      class="form-control"
-      id="floatingInput"
-      placeholder="Name"
-    />
+    <input required type="number" name="permitType" [(ngModel)]="permit.permitTypeId" class="form-control"
+      id="floatingInput" placeholder="Name" />
     <label for="floatingInput" for="permitType">Permit Type</label>
   </div>
 
   <div class="form-floating mb-3">
-    <input
-      type="date"
-      name="permitDate"
-      [(ngModel)]="permit.permitDate"
-      class="form-control"
-      id="floatingInput"
-      placeholder="Name"
-    />
+    <input type="date" name="permitDate" [(ngModel)]="permit.permitDate" class="form-control" id="floatingInput"
+      placeholder="Name" />
     <label for="floatingInput" for="permitDate">Date</label>
   </div>
-
   <div *ngIf="showAlert" class="success-alert">
     <div class="alert alert-dark" role="alert">
       Your permit has been added successfully!
     </div>
   </div>
-  <button class="btn btn-dark mt-3" (click)="add()">Add</button>
+  <button [disabled]="addForm.invalid" (click)="add()" class="btn btn-dark mt-3">Add</button>
+</form>
 </div>
