@@ -8,7 +8,7 @@
 - Docker
 - Microsoft SQL server
 
-##Instructions:
+## Instructions:
 
 After cloning the project get inside the PermitClient folder and run `npm install` to install all the node dependencies. Run Microsoft SQL databases and 
 start the client server using `ng server -open`. 
